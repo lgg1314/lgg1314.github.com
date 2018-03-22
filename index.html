@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		 <style>
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .swiper-slide p{font-size:3rem;}
+    
+    .swiper-slide h1{text-align: center; font-size: 5rem;} 
+    .swiper-slide img{display: block; margin:  0 auto;}
+    .swiper-slide  p{text-align: center; font-weight: 900;} 
+    .swiper-slide:nth-of-type(3) img{ width: 100%;}
+    </style>
+	</head>
+	<body>
+		<div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide" >
+		            	<h1  class="ani"  swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">大一</h1>
+		            	<img src="imgs/IMG_0840.JPG"  class="ani"  swiper-animate-effect="flash" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"/>
+			            <p  class="ani"  swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">这是我和我的辅导员</p>
+			            <p class="ani"  swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s">那时候，大家笑的是多么开心啊</p>
+		            </div>
+		            
+		            
+		            <div class="swiper-slide" >
+		            	<h1  class="ani"  swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">大二</h1>
+		            	<img src="imgs/IMG_3297.JPG"  class="ani"  swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"/>
+			            <p  class="ani"  swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">这是我的五个篮球队员</p>
+			            <p class="ani"  swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1s">那一年，我们夺得了院篮球冠军</p>
+			             <p class="ani"  swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">那一年，我们真的很强</p>
+			             
+		          </div>
+		          
+		             <div class="swiper-slide" >
+		            	<h1  class="ani"  swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">大三</h1>
+		            	<img src="imgs/IMG_0002.JPG"  class="ani"  swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"/>
+			            <p  class="ani"  swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">三个老干部</p>
+			            <p class="ani"  swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1s">那一年，我们圆了排球夺冠的梦</p>
+			             <p class="ani"  swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">弥补了上一年留下来的遗憾</p>
+		          </div>
+		          
+		            <div class="swiper-slide" >
+		            	<h1  class="ani"  swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">大四</h1>
+		            	<img src="imgs/离别.jpg"  class="ani"  swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"/>
+			            
+			            <p class="ani"  swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1s">这一年，我们都快毕业了</p>
+			             <p class="ani"  swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">大家为了自己的前程各奔东西</p>
+		          </div>
+		            
+		            
+		            
+		       
+		            
+		    </div>
+    <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+		
+		
+	</body>
+	
+	<script src="js/swiper.animate1.0.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/swiper.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+  
+		   var swiper = new Swiper('.swiper-container', {
+		        direction: 'vertical',
+		        slidesPerView: 1,
+		        spaceBetween: 30,
+		        mousewheel: true,
+		        pagination: {
+		          el: '.swiper-pagination',
+		          clickable: true,
+		        },
+		         on:{
+			      init: function(){
+			        swiperAnimateCache(this); //隐藏动画元素 
+			        swiperAnimate(this); //初始化完成开始动画
+			      }, 
+			      slideChangeTransitionEnd: function(){ 
+			        swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+			      } 
+			    }
+		    });
+    </script>
+</html>
